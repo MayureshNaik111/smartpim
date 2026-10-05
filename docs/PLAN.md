@@ -46,6 +46,30 @@ Build an AI-powered PIM system that:
 4. **Single-user application** — no auth required for hackathon scope.
 5. **Local/in-memory data store** is acceptable for the MVP.
 
+## AI-Assisted Development
+
+This project was built with AI assistance from three tools:
+
+- **ChatGPT** — planning, architecture decisions, prompt creation, debugging guidance, documentation guidance, and review of implementation/testing results.
+- **Google Antigravity** — initial project setup and substantial implementation; it generated/modified the initial SmartPIM codebase, which was subsequently inspected and verified.
+- **Freebuff** — inspection of the existing codebase; identification and fixing of missing Attributes/Synchronization functionality and other issues; authoring and running of unit, integration, and E2E tests; API, runtime, build, TypeScript, and ESLint verification; the final demo-readiness audit.
+
+AI-generated code was reviewed and tested by a human before acceptance. Full details: [`docs/AI_USAGE.md`](AI_USAGE.md).
+
+## Agentic AI Workflow
+
+The AI Product Agent follows a six-step agentic workflow with a human gate at the end:
+
+1. **Analyze** rough input → present / missing / ambiguous information, inferred attributes
+2. **Structure** → map the analysis to the product schema
+3. **Generate** → title, descriptions, category, tags, attributes, price range, SEO
+4. **Validate** → required fields, description quality, SEO length rules
+5. **Score** → completeness score (0–100)
+6. **Recommend** → improvement suggestions
+7. **User approval** → only an approved product is inserted into the catalog, which can then be synchronized to WooCommerce
+
+Demo Mode (deterministic generation) is used whenever an AI API key is unavailable; see [`docs/ARCHITECTURE.md`](ARCHITECTURE.md) for the component mapping.
+
 ## Architecture
 
 ```
